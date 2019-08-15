@@ -80,7 +80,7 @@ DOES> ADDR-MODE PERFORM  \ call function pointed to by ADDR-MODE,
       ['] MODE-DEFAULT ADDR-MODE ! ;
 
 ( OPCODES )
-$B1 $A1 $B9 $BD $AD 00 $B5 $A5 $A9 $00 OPCODE LDA
+$B1 $A1 $B9 $BD $AD $00 $B5 $A5 $A9 $00 OPCODE LDA
 : BRK $00 ; \ BRK simply pushes its byte (as do all opcodes which use only implied addressing)
             \ and so its code $00 is repurposed in OPCODE-defined words to signify an invalid addr mode
             
