@@ -15,14 +15,6 @@
 
 : @INDEX ( uindex - copcode ) CELLS + @ ;
 
-: INT->BYTE ( n -- b )   SP@ C@ SWAP DROP ;
-
-: ?<=$FFFF ( operand -- finrange )
-    $FFFF <= ;
-
-: ?>=-32768 ( operand -- finrange )
-   -32768 >= ;
-
 : ?IN-SIGNED-8BIT-RANGE
     DUP -128 >= SWAP $FF <= AND ;
 
