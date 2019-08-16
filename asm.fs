@@ -16,7 +16,9 @@
 : @INDEX ( uindex - copcode ) CELLS + @ ;
 
 : ?IN-SIGNED-8BIT-RANGE
-    DUP -128 >= SWAP $FF <= AND ;
+  DUP $FF > IF BYE THEN
+  DUP -265 < IF DROP BYE THEN
+  DUP 0    < IF $100 + THEN
 
 : ?OPERAND-IN-ZP-RANGE ( operand -- finrange )     \ distinguishes between zp and absolute addressing modes
     ?IN-SIGNED-8BIT-RANGE ;
